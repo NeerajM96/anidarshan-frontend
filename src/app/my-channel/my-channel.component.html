@@ -1,0 +1,41 @@
+<div class="channel-container">
+    
+    
+    <div class="channel-header">
+        <div class="cover-image-container">
+            <img [src]="coverImage" class="cover-image" alt="">
+        </div>
+        
+        <div class="channel-details-conatiner">
+
+            <div class="channel-details-row">
+                <img [src]="avatar" class="avatar" alt="">
+                <div class="channel-info">
+                    <p class="channel-name">{{fullName}}</p>
+                    <p class="channel-username">@{{username}}</p>
+                    <p class="subscribers">{{subscribersCount}} Subscribers</p>
+                    <p class="subscribed-to">{{channelsSubscribedTo}} Subscribed</p>
+                </div>
+            </div>
+
+            <div class="subscribe-btn-container">
+                <button class="subscribe btn-secondary">Subscribe</button>
+            </div>
+
+        </div>
+    </div>
+    <div class="channel-content">
+        <div class="channel-nav-links">
+            <ul>
+                <li><a href="">Videos</a></li>
+                <li><a href="">Playlist</a></li>
+                <li><a href="">Tweets</a></li>
+                <li><a href="">Subscribed</a></li>
+            </ul>
+            <!-- <div class="test" style="background-color: red;height: 40px;"></div> -->
+        </div>
+    </div>
+    <div class="channel-items">
+        <app-videos></app-videos>
+    </div>
+</div>

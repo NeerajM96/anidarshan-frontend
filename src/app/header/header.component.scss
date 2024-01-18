@@ -1,0 +1,19 @@
+.header{
+    background-color: #121212;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    padding: 10px 20px;
+    // margin: 4px;
+    margin-bottom: 2px;
+    .auth-section{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .login{
+            // border: 1px solid;
+            margin-right: 30px;
+        }
+    }
+}

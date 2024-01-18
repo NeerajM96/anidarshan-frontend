@@ -1,0 +1,37 @@
+// .home-container{
+//     background: #121212;
+//     color: #fff;
+//     padding: 20px 20px;
+//     // width: 80vw;
+//     // height: 80vh;
+
+//     // height: 100%;
+
+//     position: absolute;
+//     top:68px;
+//     right:0;
+//     bottom: 0;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     width: 80%;
+//     margin: 4px;
+// }
+
+.home-container{
+    background: #121212;
+    color: #fff;
+    padding: 20px 20px;
+    // width: 80vw;
+    // height: 80vh;
+
+    // height: 100%;
+    
+    
+    top:68px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // height: calc(100vh - 68px);
+    height: 100%;
+}

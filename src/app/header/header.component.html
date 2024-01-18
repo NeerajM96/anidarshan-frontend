@@ -1,0 +1,13 @@
+<div class="header">
+    <div class="logo-section">
+      <div class="logo"> Video </div>
+    </div>
+    <div class="auth-section">
+        <div class="login btn-primary" *ngIf="!isLoggedIn" routerLink="/login">Log in</div>
+        <div class="signup btn-secondary" *ngIf="!isLoggedIn" routerLink="/signup">Sign up</div>
+        <button class="logout btn-secondary" *ngIf="isLoggedIn" (click)="logoutUser()">Log out</button>
+        <!-- <div class="account">
+            <app-account></app-account>
+        </div> -->
+    </div>
+  </div>
