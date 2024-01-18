@@ -9,7 +9,7 @@ import { AuthService } from './services/auth.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'videotube';
+  title = 'anidarshan';
   isLoggedIn = false
   showSidebar = true
   showHeader = true
