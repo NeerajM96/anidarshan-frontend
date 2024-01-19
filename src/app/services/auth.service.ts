@@ -59,7 +59,7 @@ export class AuthService {
   private apiUrl = 'http://localhost:8000/api/v1/users/';
   private accessToken = '';
   private username = '';
-  private userId = null;
+  private userId ='';
   private authStatusListner = new BehaviorSubject(false);
   private userState = new BehaviorSubject<any>({});
 
@@ -70,6 +70,10 @@ export class AuthService {
   }
 
   getUserId(){
+    const authData = this.getAuthData()
+    if (authData && authData.userId){
+      this.userId = authData.userId
+    }
     return this.userId
   }
 
@@ -83,6 +87,13 @@ export class AuthService {
       userId:localStorage.getItem("userId"),
       accessToken:localStorage.getItem("accessToken"),
     }
+
+    // Handle the case where localStorage.getItem returns null
+  if (data.username === null || data.userId === null || data.accessToken === null) {
+    // Optionally, you may want to handle this case differently based on your requirements.
+    // You can log a warning, set default values, or take other appropriate actions.
+    console.warn('Some auth data is missing in localStorage.');
+  }
 
     return data
   }
@@ -142,11 +153,13 @@ export class AuthService {
     const user = {
       _id: '659e6b8c04170c08ee0b874f',
     };
+    this.authStatusListner.next(false);
+          this.clearAuthLocalStorage()
     return this.http.post<LogoutApiResponse>(endPoint, user).pipe(
       tap((res) => {
         if (res.statusCode == 200) {
-          this.authStatusListner.next(false);
-          this.clearAuthLocalStorage()
+          // this.authStatusListner.next(false);
+          // this.clearAuthLocalStorage()
         }
       })
     );

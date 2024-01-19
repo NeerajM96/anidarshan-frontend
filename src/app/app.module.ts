@@ -16,6 +16,9 @@ import { AuthInterceptor } from './services/auth.interceptor';
 import { SignupComponent } from './signup/signup.component';
 import { VideoCardComponent } from './videos/video-card/video-card.component';
 import { VideosComponent } from './videos/videos.component';
+import { TweetsComponent } from './tweets/tweets.component';
+import { TweetCardComponent } from './tweets/tweet-card/tweet-card.component';
+import { TimeAgoPipe } from './pipes/time-ago.pipe';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,10 @@ import { VideosComponent } from './videos/videos.component';
     MyChannelComponent,
     SignupComponent,
     VideoCardComponent,
-    VideosComponent
+    VideosComponent,
+    TweetsComponent,
+    TweetCardComponent,
+    TimeAgoPipe,
   ],
   imports: [
     BrowserModule,

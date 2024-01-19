@@ -1,0 +1,20 @@
+<div class="tweet-card-container">
+    <div class="tweet-info">
+        <div class="channel-icon">
+            <!-- <img [src]="channelIcon" alt="">https://images.pexels.com/photos/1115816/pexels-photo-1115816.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1 -->
+            <img [src]="channelIcon" alt="">
+        </div>
+        <div class="tweet-details">
+            <div class="tweet-title">{{channelName}}
+                <span class="secondary-text">{{ tweetedAt | timeAgo}}</span>
+            </div>
+            <div class="tweet-content">
+                {{content}}
+            </div>
+            <div class="likes-dislikes">
+                <span class="like-section"><i class="fa fa-thumbs-up"></i> {{likes}}</span>
+                <span><i class="fa fa-thumbs-down"></i> {{dislikes}}</span>
+            </div>
+        </div>
+    </div>
+</div>

@@ -121,3 +121,9 @@ input[type="file"]{
     font-size: 20px;
     // color: #ae7aff;
 }
+
+.secondary-text{
+    --tw-text-opacity: 1;
+    color: rgb(156 163 175 / var(--tw-text-opacity));
+    font-size: 0.875rem;
+}

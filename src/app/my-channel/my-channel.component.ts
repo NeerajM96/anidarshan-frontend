@@ -14,7 +14,7 @@ export class MyChannelComponent implements OnInit, OnDestroy {
   user: Subscription | undefined;
   isAuthenticated: boolean = false;
   accessToken = '';
-
+  currTab = 'tweets';
   fullName = '';
   username = '';
   avatar = '';
@@ -54,5 +54,9 @@ export class MyChannelComponent implements OnInit, OnDestroy {
       this.avatar = res.data.avatar
       this.coverImage = res.data.coverImage
     });
+  }
+
+  setCurrentTab(tabName:string){
+    this.currTab = tabName
   }
 }

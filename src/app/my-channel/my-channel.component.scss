@@ -93,7 +93,8 @@
     }
     
 }
+// TODO: some bug is occurring when link is active and on hover the text color property is behaving differently
 .my-channel-li-active{
-    background-color: #fff;
-    color: #ae7aff;
+    background-color: #ae7aff;
+    color: #121212;
 }
