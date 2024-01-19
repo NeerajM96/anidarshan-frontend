@@ -1,22 +1,5 @@
 <div class="videos-container">
-  <app-video-card></app-video-card>
-  <app-video-card></app-video-card>
-  <app-video-card></app-video-card>
-  <app-video-card></app-video-card>
-  <app-video-card></app-video-card>
-  <app-video-card></app-video-card>
-  <app-video-card></app-video-card>
-  <app-video-card></app-video-card>
-  <app-video-card></app-video-card>
-  <app-video-card></app-video-card>
-  <app-video-card></app-video-card>
-  <app-video-card></app-video-card>
-  <app-video-card></app-video-card>
-  <app-video-card></app-video-card>
-  <app-video-card></app-video-card>
-  <app-video-card></app-video-card>
-  <app-video-card></app-video-card>
-  <app-video-card></app-video-card>
-  <app-video-card></app-video-card>
-  <app-video-card></app-video-card>
+  <span *ngFor="let data of videoData">
+    <app-video-card [data]="data" [onMyChannelPage]="toMyChannelPage"></app-video-card>
+  </span>
 </div>

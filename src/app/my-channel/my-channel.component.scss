@@ -83,6 +83,7 @@
               li a:hover {
                 background-color: #fff;
                 color: #ae7aff;
+                cursor: pointer;
               }
         }   
     }
@@ -91,4 +92,8 @@
         // overflow-y: auto;
     }
     
+}
+.my-channel-li-active{
+    background-color: #fff;
+    color: #ae7aff;
 }

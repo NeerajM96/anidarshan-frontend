@@ -103,13 +103,21 @@
     height: 44px;
     width: 44px;
     line-height: 44px;
-    border: 2px solid #fff;
+    border: 2px solid #ae7aff;
     border-radius: 50%;
     text-align: center;
     color: #fff;
+    font-size: 26px;
+    font-weight: 700;
 }
 
 // hide input field where type=file
 input[type="file"]{
     visibility: hidden;
+}
+
+// side-bar font-awsome icon
+.side-bar-icons{
+    font-size: 20px;
+    // color: #ae7aff;
 }

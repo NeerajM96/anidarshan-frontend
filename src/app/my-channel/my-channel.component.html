@@ -19,7 +19,7 @@
             </div>
 
             <div class="subscribe-btn-container">
-                <button class="subscribe btn-secondary">Subscribe</button>
+                <button class="subscribe btn-secondary"><i class="fa fa-user-plus"></i> Subscribe</button>
             </div>
 
         </div>
@@ -27,15 +27,15 @@
     <div class="channel-content">
         <div class="channel-nav-links">
             <ul>
-                <li><a href="">Videos</a></li>
-                <li><a href="">Playlist</a></li>
-                <li><a href="">Tweets</a></li>
-                <li><a href="">Subscribed</a></li>
+                <li><a routerLinkActive="my-channel-li-active">Videos</a></li>
+                <li><a routerLinkActive="my-channel-li-active">Playlist</a></li>
+                <li><a>Tweets</a></li>
+                <li><a>Subscribed</a></li>
             </ul>
             <!-- <div class="test" style="background-color: red;height: 40px;"></div> -->
         </div>
     </div>
     <div class="channel-items">
-        <app-videos></app-videos>
+        <app-videos [toMyChannelPage]="true"></app-videos>
     </div>
 </div>

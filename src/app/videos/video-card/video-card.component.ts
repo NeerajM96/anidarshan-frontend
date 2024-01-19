@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-video-card',
@@ -6,17 +6,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./video-card.component.scss']
 })
 export class VideoCardComponent implements OnInit{
-  thumbnail:string = 'https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-  duration:string = '20:45'
-  channelIcon:string = 'http://res.cloudinary.com/dqvwtmjbb/image/upload/v1705576838/o2sid2hwlsqq7mjmajob.jpg'
-  title:string = 'JavaScript Fundamentals: Variables and Data Types'
-  viewCount:string = '10.3k'
-  uploadedAt:string = '40 minutes ago'
-  channelName:string = 'Chai Aur Code'
+  thumbnail:string = ''
+  duration:string = ''
+  channelIcon:string = ''
+  title:string = ''
+  viewCount:string = ''
+  uploadedAt:string = ''
+  channelName:string = ''
 
+  @Input()
+  data:any
+
+  @Input()
+  onMyChannelPage = false
   // onMyChannelPage:boolean = true  // hides channel name and icon when I am on my page.
   ngOnInit(): void {
-    
+    this.thumbnail = this.data.thumbnail
+    this.duration = this.data.duration
+    this.channelIcon = this.data.channelIcon
+    this.title = this.data.title
+    this.viewCount = this.data.viewCount
+    this.uploadedAt = this.data.uploadedAt
+    this.channelName = this.data.channelName
   }
 
 }
