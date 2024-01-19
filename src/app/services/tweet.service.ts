@@ -5,12 +5,24 @@ interface UserTweet{
   data: [
     {
       title:string
-      tweetedAt:Date
+      createdAt:Date
       content:string
       likes:number
       dislikes:number
     }
   ]
+}
+
+interface CreateTweetAPI{
+  data: 
+    {
+      title:string
+      createdAt:Date
+      content:string
+      likes:number
+      dislikes:number
+    }
+  
 }
 
 @Injectable({
@@ -24,7 +36,12 @@ export class TweetService {
 
    getUserTweets(userId:string){
     const endPoint = this.apiUrl + `user/${userId}`
-    console.log(endPoint)
     return this.http.get<UserTweet>(endPoint)
+   }
+
+   createTweet(tweetContent:string){
+    const endPoint = this.apiUrl + `create-tweet`
+    const body = {content:tweetContent}
+    return this.http.post<CreateTweetAPI>(endPoint,body)
    }
 }

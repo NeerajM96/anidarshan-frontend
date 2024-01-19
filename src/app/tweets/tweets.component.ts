@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { TweetService } from '../services/tweet.service';
 import { AuthService } from '../services/auth.service';
+import { FormBuilder, FormControl, Validators } from '@angular/forms';
 
 
 
@@ -18,6 +19,7 @@ export class TweetsComponent implements OnInit {
   tweetData:any
 
   userId = ''
+  newTweet = new FormControl('', Validators.required);
   // tweetData = [
   //   {
   //     title: 'React Patterns',
@@ -107,6 +109,28 @@ export class TweetsComponent implements OnInit {
     this.tweetService.getUserTweets(userId).subscribe(tweets => {
         this.tweetData = tweets.data
     })
+  }
+
+  createNewTweet(){
+    if(this.newTweet.valid && this.newTweet.value){
+      const tweetContent = this.newTweet.value;
+      console.log(tweetContent)
+      this.tweetService.createTweet(tweetContent).subscribe(res => {
+        console.log("Tweet created successfully: ", res)
+        this.insertNewTweetAndClearForm(res)
+
+      })
+    }
+    console.log(this.newTweet)
+  }
+
+  insertNewTweetAndClearForm(res:any){
+    const tweet = {
+      tweetedAt:res.data.createdAt,
+      content:res.data.content
+    }
+    this.tweetData.push(tweet)
+    this.newTweet.reset()
   }
 
 }
