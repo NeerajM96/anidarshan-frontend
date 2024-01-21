@@ -22,6 +22,7 @@ export class MyChannelComponent implements OnInit, OnDestroy {
   subscribersCount = 0;
   isSubscribed = false;
   channelsSubscribedTo = 0;
+  userId = ''
 
   constructor(
     private dataStore: DataStoreService,
@@ -32,7 +33,7 @@ export class MyChannelComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.user = this.authService.getUserState().subscribe((currentUser) => {
       console.log('User: ', currentUser);
-      this.username = currentUser.username || this.route.snapshot.paramMap.get('id');
+      this.username = currentUser.username || this.route.snapshot.paramMap.get('username');
     });
     this.accessToken = this.authService.getAccessToken();
     this.getChannelDetails();
@@ -53,6 +54,7 @@ export class MyChannelComponent implements OnInit, OnDestroy {
       this.channelsSubscribedTo = res.data.channelsSubscribedTo
       this.avatar = res.data.avatar
       this.coverImage = res.data.coverImage
+      this.userId = res.data._id
     });
   }
 
