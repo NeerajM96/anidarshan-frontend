@@ -52,7 +52,13 @@
             .subscribe-btn-container{
                 margin-right: 16px;
                 padding-top: 24px;
-                
+                button{
+                    box-shadow: 4px 4px #4f4e4e;
+                }
+                button:active{
+                    box-shadow: 1px 1px #4f4e4e;
+                    transform: translate(4px, 4px);
+                }
             }
         }
     }
