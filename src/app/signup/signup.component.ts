@@ -2,6 +2,7 @@ import { Component, HostListener } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { DataStoreService } from '../services/data-store.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -22,7 +23,7 @@ export class SignupComponent {
 
   })
 
-  constructor(private authService: AuthService, private fb: FormBuilder, private dataStore:DataStoreService){
+  constructor(private authService: AuthService, private fb: FormBuilder, private dataStore:DataStoreService, private router:Router){
     dataStore.showHeader.next(false);
     dataStore.showSideBar.next(false);
   }
@@ -46,12 +47,13 @@ export class SignupComponent {
     console.log("Avatar",avatar)
     this.authService.register(fullName!,username!,email!,password!,avatar!,coverImage!).subscribe(res => {
       console.log("Registered User: ", res)
+      this.router.navigate(['/login'])
     })
   }
 
   onImagePicked(event:Event, fileName:string){
     
-    // TODO: Validate that file type is only image
+    // TODO: Validate that file type is only image and not pdf etc.
 
     const htmlInput = (event.target as HTMLInputElement)
     if (htmlInput.files){

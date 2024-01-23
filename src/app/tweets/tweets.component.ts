@@ -14,6 +14,8 @@ export class TweetsComponent implements OnInit {
   channelIcon: string = '';
   @Input()
   channelName: string = '';
+  @Input()
+  myChannel:boolean = false;
 
   tweetData: any;
   username: string = '';

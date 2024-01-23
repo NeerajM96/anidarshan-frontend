@@ -19,7 +19,10 @@
             </div>
 
             <div class="subscribe-btn-container">
-                <button class="subscribe btn-secondary"><i class="fa fa-user-plus"></i> Subscribe</button>
+                <button class="subscribe btn-secondary" *ngIf="myChannel"><i class="fa fa-pencil"></i> Edit</button>
+                <button class="subscribe btn-secondary" *ngIf="!myChannel" (click)="onSubscribe()">
+                    <i class="fa fa-user-plus"></i> Subscribe<span *ngIf="isSubscribed">d</span>
+                </button>
             </div>
 
         </div>
@@ -37,6 +40,6 @@
     </div>
     <div class="channel-items">
         <app-videos [toMyChannelPage]="true" *ngIf="currTab === 'videos'"></app-videos>
-        <app-tweets [channelIcon]="avatar" [channelName]="fullName"  *ngIf="currTab === 'tweets'"></app-tweets>
+        <app-tweets [channelIcon]="avatar" [myChannel]="myChannel" [channelName]="fullName"  *ngIf="currTab === 'tweets'"></app-tweets>
     </div>
 </div>

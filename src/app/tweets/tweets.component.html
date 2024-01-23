@@ -1,5 +1,5 @@
 <div class="tweet-container">
-    <div class="create-tweet-section">
+    <div class="create-tweet-section" *ngIf="myChannel">
         <input type="text" placeholder="Write a tweet" [formControl]="newTweet">
         <button class="btn-secondary send-btn" (click)="createNewTweet()">Send</button>
     </div>

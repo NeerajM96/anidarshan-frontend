@@ -3,6 +3,7 @@
     padding: 25px 10px;
     margin: 10px;
     border-bottom: 1px solid rgb(55, 65, 81, 0.9);
+    position: relative;
     .tweet-info{
         display: flex;
         .channel-icon img{
@@ -32,5 +33,18 @@
                 }
             }
         }
+    }
+    .delete-icon{
+        color: #ae7aff;
+        position: absolute;
+        top:0;
+        right: 0;
+        cursor: pointer;
+    }
+}
+
+.tweet-card-container:hover{
+    i{
+        display: inline-block;
     }
 }
