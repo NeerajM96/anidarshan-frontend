@@ -1,7 +1,10 @@
 <div class="main-container">
-    <app-header *ngIf="showSidebar"></app-header>
-    <div class="home-page">
-        <div class=""><app-sidebar *ngIf="showSidebar"></app-sidebar></div>
+    <app-header *ngIf="showHeader"></app-header>
+    <!-- TO DO: to resovle-> getting ExpressionChangedAfterItHasBeenCheckedError due to showHeader,
+    put setting next of behaviour subject of eg admin-dashboard component inside the constructor instead of ngOnInit
+    -->
+    <div class="home-page" [ngClass]="showSidebar ? 'home-page-sidebar' : 'home-page-no-sidebar'">
+        <div class="" *ngIf="showSidebar"><app-sidebar></app-sidebar></div>
         <div class="router-outlet-section"><router-outlet></router-outlet></div>
     </div> 
 </div>

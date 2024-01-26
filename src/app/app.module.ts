@@ -27,6 +27,7 @@ import {MatDialogModule} from "@angular/material/dialog";
 import { UploadVideoModalComponent } from './shared/upload-video-modal/upload-video-modal.component';
 import { VideoUploadStatusModalComponent } from './shared/video-upload-status-modal/video-upload-status-modal.component';
 import { DeleteVideoModalComponent } from './shared/delete-video-modal/delete-video-modal.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { DeleteVideoModalComponent } from './shared/delete-video-modal/delete-vi
     UploadVideoModalComponent,
     VideoUploadStatusModalComponent,
     DeleteVideoModalComponent,
+    AdminDashboardComponent,
   ],
   imports: [
     BrowserModule,
