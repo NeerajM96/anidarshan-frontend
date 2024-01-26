@@ -46,7 +46,6 @@ export class MyChannelComponent implements OnInit, OnDestroy {
     });
     this.accessToken = this.authService.getAccessToken();
     this.getChannelDetails();
-    this.deleteVideoDialog()
   }
 
   ngOnDestroy(): void {
@@ -115,12 +114,6 @@ export class MyChannelComponent implements OnInit, OnDestroy {
 
   uploadVideoStatusDialog(){
     const dialogConfig = new MatDialogConfig()
-    // // we are overriding a couple of default behaviors
-    // // user will not be able to close the dialog just by clicking outside of it
-    // dialogConfig.disableClose = true
-    
-    // // the focus will be set automatically on the first form field of the dialog
-    // dialogConfig.autoFocus = true
     dialogConfig.panelClass = 'upload-status-dialog-modal'
     this.dialog.open(VideoUploadStatusModalComponent, dialogConfig)
   }
