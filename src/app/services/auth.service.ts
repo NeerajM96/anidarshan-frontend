@@ -39,7 +39,7 @@ interface ChannelInfo{
       coverImage: string;
       subscribersCount:number;
       isSubscribed:boolean;
-      channelsSubscribedTo:number
+      channelsSubscribedToCount:number
   }
   message:string;
   statusCode:number;

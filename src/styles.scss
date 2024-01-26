@@ -73,6 +73,16 @@
         color: #121212;
         cursor: pointer;
     }
+
+    @media (max-width:880px) {
+        &.side-nav-btn-row{
+            width: 42px;
+            .nav-button{
+                display: none;
+            }
+        }
+    }
+    
 }
 .active{
     background: #ae7aff;
@@ -128,6 +138,114 @@ input[type="file"]{
     font-size: 0.875rem;
 }
 
+.tertiary-text{
+    --tw-text-opacity: 1;
+    color: rgb(209 213 219 / var(--tw-text-opacity));
+    font-size: 0.875rem;
+}
+
 .hide-icon{
     display: none;
+}
+
+.btn-d-primary{
+    background: #ae7aff;
+    color: #121212;
+}
+
+.btn-d-secondary{
+    background: #fff;
+    color: #121212;
+}
+// html, body { height: 100%; }
+// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.shadow-btn-container{
+    button{
+            box-shadow: 4px 4px #4f4e4e;
+            outline: none;
+        }
+    button:active{
+            box-shadow: 1px 1px #4f4e4e;
+            transform: translate(4px, 4px);
+        }
+}
+
+.cancel-btn{
+    outline: none;
+    padding: 12px 16px;
+    border: 1px solid #e5e7eb;
+    width: 100%;
+    background-color: #121212;
+    color: #fff;
+    cursor: pointer;
+}
+
+.finish-btn{
+    outline: none;
+    padding: 12px 16px;
+    border: 1px solid #e5e7eb;
+    width: 100%;
+    border: 1px solid #121212;
+    background-color: #ae7aff;
+    cursor: pointer;
+}
+.finish-btn-disable{
+    background-color: #e4d3ff;
+    cursor: pointer;
+}
+
+.delete-btn{
+    outline: none;
+    padding: 12px 16px;
+    width: 100%;
+    border: 1px solid #121212;
+    background-color: rgb(185, 28, 28);
+    cursor: pointer;
+    color: #fff;
+}
+
+.flex-row-align{
+    display: flex;
+    flex-direction: row;
+}
+
+// Dialog
+.upload-dialog-modal{
+    border: 1px solid #e5e7eb;
+    width: 60%;
+    height: auto;
+}
+
+.upload-status-dialog-modal{
+    border: 1px solid rgb(55, 65, 81);
+    width: 40%;
+    height: auto;
+}
+
+.delete-video-dialog-modal{
+    border: 1px solid rgb(55, 65, 81);
+    width: 30%;
+    height: auto;
+}
+
+// headings
+.text-xl{
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+// icons
+.close-icon{
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+// fonts
+.secondary-fonts{
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.fw-3{
+    font-weight: 300;
 }

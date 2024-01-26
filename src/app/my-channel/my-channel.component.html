@@ -33,13 +33,16 @@
                 <li (click)="setCurrentTab('videos')"><a [class.my-channel-li-active] = "currTab === 'videos'">Videos</a></li>
                 <li><a routerLinkActive="my-channel-li-active">Playlist</a></li>
                 <li (click)="setCurrentTab('tweets')" [class.my-channel-li-active] = "currTab === 'tweets'"><a>Tweets</a></li>
-                <li><a>Subscribed</a></li>
+                <li (click)="setCurrentTab('subscribers')" [class.my-channel-li-active] = "currTab === 'subscribers'"><a>Subscribed</a></li>
             </ul>
-            <!-- <div class="test" style="background-color: red;height: 40px;"></div> -->
         </div>
     </div>
     <div class="channel-items">
         <app-videos [toMyChannelPage]="true" *ngIf="currTab === 'videos'"></app-videos>
         <app-tweets [channelIcon]="avatar" [myChannel]="myChannel" [channelName]="fullName"  *ngIf="currTab === 'tweets'"></app-tweets>
+        <app-subscribers [flag]="'subscribed'" [userId]="userId" *ngIf="currTab === 'subscribers'"></app-subscribers>
+    </div>
+    <div class="upload-video-btn">
+        <button class="logout btn-secondary" *ngIf="currTab === 'videos'" (click)="uploadVideoDialog()"><i class="fa fa-plus"></i> New Video</button>
     </div>
 </div>
