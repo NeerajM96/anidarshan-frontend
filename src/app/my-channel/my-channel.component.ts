@@ -112,11 +112,11 @@ export class MyChannelComponent implements OnInit, OnDestroy {
     this.dialog.open(UploadVideoModalComponent, dialogConfig)
   }
 
-  uploadVideoStatusDialog(){
-    const dialogConfig = new MatDialogConfig()
-    dialogConfig.panelClass = 'upload-status-dialog-modal'
-    this.dialog.open(VideoUploadStatusModalComponent, dialogConfig)
-  }
+  // uploadVideoStatusDialog(){
+  //   const dialogConfig = new MatDialogConfig()
+  //   dialogConfig.panelClass = 'upload-status-dialog-modal'
+  //   this.dialog.open(VideoUploadStatusModalComponent, dialogConfig)
+  // }
 
   deleteVideoDialog(){
     const dialogConfig = new MatDialogConfig()

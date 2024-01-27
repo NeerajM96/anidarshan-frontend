@@ -1,12 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
+import { VideoUploadStatusModalComponent } from '../video-upload-status-modal/video-upload-status-modal.component';
 
 @Component({
   selector: 'app-upload-video-modal',
   templateUrl: './upload-video-modal.component.html',
   styleUrls: ['./upload-video-modal.component.scss']
 })
-export class UploadVideoModalComponent {
+export class UploadVideoModalComponent implements OnInit{
 
   uploadForm = this.fb.group({
     video:[null, Validators.required],
@@ -15,7 +17,23 @@ export class UploadVideoModalComponent {
     description:['', Validators.required],
   })
 
-  constructor(private fb:FormBuilder){
+  constructor(private fb:FormBuilder, private dialogRef:MatDialogRef<UploadVideoModalComponent>, private dialog:MatDialog){
 
   }
+  ngOnInit(): void {
+    
+  }
+
+  onSave(){
+    this.dialogRef.close()
+    this.uploadVideoStatusDialog()
+  }
+
+  uploadVideoStatusDialog(){
+    const dialogConfig = new MatDialogConfig()
+    dialogConfig.panelClass = 'upload-status-dialog-modal'
+    this.dialog.open(VideoUploadStatusModalComponent, dialogConfig)
+  }
+
+
 }
