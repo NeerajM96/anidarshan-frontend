@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
+import { DataStoreService } from '../services/data-store.service';
 
 @Component({
   selector: 'app-header',
@@ -9,10 +10,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit, OnDestroy {
+
+  avatar:string = ''
   isLoggedIn = false;
   private authListenerSub: Subscription | undefined;
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router, private dataStore:DataStoreService) {}
 
   ngOnInit(): void {
     this.authListenerSub = this.authService
@@ -20,6 +23,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
       .subscribe((isAuthenticated) => {
         this.isLoggedIn = isAuthenticated;
       });
+      this.avatar = this.authService.getUserAvatar()!
   }
   ngOnDestroy(): void {
     this.authListenerSub?.unsubscribe();
@@ -30,6 +34,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
       console.log('Logging out user: ', res);
       if (res.statusCode == 200) {
         this.router.navigate(['/home']);
+        this.dataStore.showSideBar.next(true)
       }
     });
   }

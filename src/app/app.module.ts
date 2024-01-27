@@ -24,6 +24,7 @@ import { SubscriberCardComponent } from './subscribers/subscriber-card/subscribe
 import { MySubscribersComponent } from './my-subscribers/my-subscribers.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDialogModule} from "@angular/material/dialog";
+import {MatMenuModule} from "@angular/material/menu";
 import { UploadVideoModalComponent } from './shared/upload-video-modal/upload-video-modal.component';
 import { VideoUploadStatusModalComponent } from './shared/video-upload-status-modal/video-upload-status-modal.component';
 import { DeleteVideoModalComponent } from './shared/delete-video-modal/delete-video-modal.component';
@@ -59,7 +60,8 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatMenuModule
   ],
   // multi:true means, since we can have multiple interceptors in the app, so don't overwrite exisiting interceptors 
   // and add it as an additional one instead and the internals will be handled by HttpClient

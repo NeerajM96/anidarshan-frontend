@@ -81,6 +81,10 @@ export class AuthService {
     return this.username
   }
 
+  getUserAvatar(){
+    const avatar = localStorage.getItem("avatar")
+    return avatar
+  }
   getAuthData(){
     const data = {
       username:localStorage.getItem("username"),
@@ -143,7 +147,7 @@ export class AuthService {
         );
         this.userState.next(user);
         this.authStatusListner.next(true);
-        this.saveAuthToLocalStorage(res.data.user.username,res.data.user._id,res.data.accessToken)
+        this.saveAuthToLocalStorage(res.data.user.username,res.data.user._id,res.data.accessToken,res.data.user.avatar)
       })
     );
   }
@@ -174,10 +178,11 @@ export class AuthService {
     return this.http.get<ChannelInfo>(endPoint)
   }
 
-  saveAuthToLocalStorage(username:string, userId:string,accessToken:string){
+  saveAuthToLocalStorage(username:string, userId:string,accessToken:string,avatar:string){
     localStorage.setItem("accessToken",accessToken)
     localStorage.setItem("username",username)
     localStorage.setItem("userId",userId)
+    localStorage.setItem("avatar",avatar)
   }
 
   clearAuthLocalStorage(){
