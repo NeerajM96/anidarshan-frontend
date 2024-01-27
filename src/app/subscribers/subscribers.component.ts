@@ -39,7 +39,6 @@ export class SubscribersComponent implements OnInit {
 
   setSubscribers(){
     this.subscriptionService.getUserChannelSubscribers(this.userId).subscribe(res => {
-      console.log("From subscriber main: ",res.data)
       this.data = res.data
       
     })

@@ -44,9 +44,7 @@ export class SignupComponent {
     
     const avatar = this.signupForm.value.avatar
     const coverImage = this.signupForm.value.coverImage
-    console.log("Avatar",avatar)
     this.authService.register(fullName!,username!,email!,password!,avatar!,coverImage!).subscribe(res => {
-      console.log("Registered User: ", res)
       this.router.navigate(['/login'])
     })
   }

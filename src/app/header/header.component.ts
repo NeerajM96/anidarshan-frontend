@@ -31,7 +31,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   logoutUser() {
     this.authService.logout().subscribe((res) => {
-      console.log('Logging out user: ', res);
       if (res.statusCode == 200) {
         this.routeToHome()
       }

@@ -40,7 +40,6 @@ export class MyChannelComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.user = this.authService.getUserState().subscribe((currentUser) => {
-      console.log('User: ', currentUser);
       this.username =
         currentUser.username || this.route.snapshot.paramMap.get('username');
     });
@@ -57,10 +56,6 @@ export class MyChannelComponent implements OnInit, OnDestroy {
     this.authService
       .getChannelInfo(channelToSearchUsername)
       .subscribe((res) => {
-        console.log(
-          `Channel info for user: ${channelToSearchUsername}: `,
-          res.data
-        );
         this.fullName = res.data.fullName;
         this.username = res.data.username;
         this.isSubscribed = res.data.isSubscribed;

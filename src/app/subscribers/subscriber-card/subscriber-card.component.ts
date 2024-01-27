@@ -16,7 +16,6 @@ export class SubscriberCardComponent implements OnInit{
     subscribersCount:number = 0
 
     ngOnInit(): void {
-      console.log("Subscribers from card: ", this.subscriberData)
       this.channelIcon = this.subscriberData.subscribers.avatar
       this.channelName = this.subscriberData.subscribers.fullName
       this.isSubscribed = this.subscriberData.subscribers.isSubscribed

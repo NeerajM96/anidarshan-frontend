@@ -41,13 +41,10 @@ export class TweetsComponent implements OnInit {
   createNewTweet() {
     if (this.newTweet.valid && this.newTweet.value) {
       const tweetContent = this.newTweet.value;
-      console.log(tweetContent);
       this.tweetService.createTweet(tweetContent).subscribe((res) => {
-        console.log('Tweet created successfully: ', res);
         this.insertNewTweetAndClearForm(res);
       });
     }
-    console.log(this.newTweet);
   }
 
   insertNewTweetAndClearForm(res: any) {

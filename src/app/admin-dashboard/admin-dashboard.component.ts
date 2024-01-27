@@ -165,7 +165,6 @@ export class AdminDashboardComponent implements OnInit {
     resulting in a toggle that doesn't match the underlying data.
     */
     event.preventDefault();
-    console.log("Id of row: ", id)
     this.data[id].published = !this.data[id].published
   }
 
