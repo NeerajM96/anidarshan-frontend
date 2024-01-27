@@ -120,6 +120,10 @@
     font-size: 26px;
     font-weight: 700;
     cursor: pointer;
+    .logo span{
+        color: #ae7aff;
+        font-weight: 700;
+    }
 }
 
 // hide input field where type=file

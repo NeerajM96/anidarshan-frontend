@@ -30,7 +30,12 @@ export class AuthInterceptor implements HttpInterceptor {
       });
 
       // Don't modify the FormData here, as it may not behave well with spreading
-      return next.handle(authRequest);
+      return next.handle(authRequest).pipe(
+        catchError(err => {
+          this.showMessage(err.error)
+          return new Observable<HttpEvent<any>>();
+        })
+      );
     } else {
       // For non-FormData requests, include the access token in the body. using spread operator was not adding form data to request,
     //   so seperated requests for form data and non-form data
@@ -43,14 +48,14 @@ export class AuthInterceptor implements HttpInterceptor {
       });
 
       return next.handle(authRequest).pipe(
-        catchError(error => {
-          this.showMessage(error.error)
+        catchError(err => {
+          this.showMessage(err.error)
           return new Observable<HttpEvent<any>>();
         })
       );
     }
   }
-
+  
   showMessage(error:string){
     const message = this.errorParseService.parseHtmlError(error)
     const config = new MatSnackBarConfig()

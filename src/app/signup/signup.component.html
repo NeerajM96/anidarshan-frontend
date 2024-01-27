@@ -2,7 +2,7 @@
     <div class="form-container">
       <div class="logo-container">
           <div class="logo-section">
-              <div class="logo"> AN </div>
+              <div class="logo"> A<span>N</span> </div>
           </div>
         </div>
       <form style="display: block;" [formGroup]="signupForm">
@@ -74,7 +74,7 @@
             </div>
           </div>
         </form>
-        <app-loader *ngIf="!isLoading"></app-loader>
+        <app-loader *ngIf="isLoading"></app-loader>
     </div>
   </div>
   
