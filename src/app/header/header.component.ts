@@ -33,9 +33,13 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.authService.logout().subscribe((res) => {
       console.log('Logging out user: ', res);
       if (res.statusCode == 200) {
-        this.router.navigate(['/home']);
-        this.dataStore.showSideBar.next(true)
+        this.routeToHome()
       }
     });
+  }
+
+  routeToHome(){
+    this.router.navigate(['/home'])
+    this.dataStore.showSideBar.next(true)
   }
 }

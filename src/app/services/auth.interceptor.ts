@@ -5,12 +5,13 @@ import {
   HttpRequest,
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, catchError, config, throwError } from 'rxjs';
 import { AuthService } from './auth.service';
+import {MatSnackBar, MatSnackBarConfig} from '@angular/material/snack-bar';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private _snackbar:MatSnackBar) {}
 
   intercept(
     req: HttpRequest<any>,
@@ -40,7 +41,23 @@ export class AuthInterceptor implements HttpInterceptor {
         withCredentials: true,
       });
 
-      return next.handle(authRequest);
+      return next.handle(authRequest).pipe(
+        catchError(error => {
+          console.log("From interceptor: ", error)
+          console.log("From interceptor ->: ", error.error)
+          this.showMessage(error.message)
+          return new Observable<HttpEvent<any>>();
+        })
+      );
     }
+  }
+
+  showMessage(message:string){
+    const config = new MatSnackBarConfig()
+    config.duration = 4000
+    config.panelClass = ['snackbar-message-box']   //can pas string or string[]
+    config.horizontalPosition = 'end'
+    config.verticalPosition  = 'top'
+    this._snackbar.open(message,'',config)
   }
 }

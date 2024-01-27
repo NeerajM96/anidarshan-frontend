@@ -29,6 +29,7 @@ import { UploadVideoModalComponent } from './shared/upload-video-modal/upload-vi
 import { VideoUploadStatusModalComponent } from './shared/video-upload-status-modal/video-upload-status-modal.component';
 import { DeleteVideoModalComponent } from './shared/delete-video-modal/delete-video-modal.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatDialogModule,
-    MatMenuModule
+    MatMenuModule,
+    MatSnackBarModule
   ],
   // multi:true means, since we can have multiple interceptors in the app, so don't overwrite exisiting interceptors 
   // and add it as an additional one instead and the internals will be handled by HttpClient

@@ -119,6 +119,7 @@
     color: #fff;
     font-size: 26px;
     font-weight: 700;
+    cursor: pointer;
 }
 
 // hide input field where type=file
@@ -227,6 +228,17 @@ input[type="file"]{
     border: 1px solid rgb(55, 65, 81);
     width: 30%;
     height: auto;
+}
+
+// mat-snack bar
+.snackbar-message-box{
+    .mdc-snackbar__surface {
+        background-color: #ae7aff !important;
+      }
+    
+    .mdc-snackbar__label {
+        color: #121212 !important;
+      }
 }
 
 // headings
