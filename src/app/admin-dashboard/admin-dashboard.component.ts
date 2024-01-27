@@ -4,6 +4,7 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { DeleteVideoModalComponent } from '../shared/delete-video-modal/delete-video-modal.component';
 import { UploadVideoModalComponent } from '../shared/upload-video-modal/upload-video-modal.component';
 import { VideoUploadStatusModalComponent } from '../shared/video-upload-status-modal/video-upload-status-modal.component';
+import { EditVideoModalComponent } from '../shared/edit-video-modal/edit-video-modal.component';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -190,6 +191,12 @@ export class AdminDashboardComponent implements OnInit {
     const dialogConfig = new MatDialogConfig()
     dialogConfig.panelClass = 'delete-video-dialog-modal'
     this.dialog.open(DeleteVideoModalComponent, dialogConfig)
+  }
+
+  editVideoDialog(){
+    const dialogConfig = new MatDialogConfig()
+    dialogConfig.panelClass = 'edit-video-dialog-modal'
+    this.dialog.open(EditVideoModalComponent, dialogConfig)
   }
 
 }

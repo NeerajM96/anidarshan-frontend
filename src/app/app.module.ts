@@ -30,6 +30,7 @@ import { VideoUploadStatusModalComponent } from './shared/video-upload-status-mo
 import { DeleteVideoModalComponent } from './shared/delete-video-modal/delete-video-modal.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { EditVideoModalComponent } from './shared/edit-video-modal/edit-video-modal.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     VideoUploadStatusModalComponent,
     DeleteVideoModalComponent,
     AdminDashboardComponent,
+    EditVideoModalComponent,
   ],
   imports: [
     BrowserModule,
